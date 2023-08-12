@@ -5,17 +5,17 @@ public class Game {
     public static void main(String[] args) {
         // Initialize all the variables
         Scanner sc = new Scanner(System.in);
-        Character player = new Character("Hunter", 100);
-        Enemies enemies = new Enemies(new Character[]{
-                new Character("Rathalos", 50),
-                new Character("Vaal hazak", 40),
-                new Character("Diablos", 30),
-                new Character("Orogaron", 20),
-                new Character("Jagras", 10)
+        Player player = new Player("Hunter", 100);
+        Enemies enemies = new Enemies(new Monster[]{
+                new Monster("Rathalos", 50),
+                new Monster("Vaal hazak", 40),
+                new Monster("Diablos", 30),
+                new Monster("Orogaron", 20),
+                new Monster("Jagras", 10)
         });
 
         // Random 1 opponent to fight
-        Character opponent = enemies.getRandomEnemy();
+        Monster opponent = enemies.getRandomEnemy();
 
         // Welcome game display
         System.out.println("Welcome to Monster hunter");
@@ -47,7 +47,7 @@ public class Game {
             }
             // Display health for every turn
             System.out.println("Your health: " + player.getHealth());
-            System.out.println(opponent.getName() + "'s health: " + opponent.getHealth());
+            System.out.println(opponent.getName() + "'s health: " + Math.max(opponent.getHealth(), 0));
 
         }
 

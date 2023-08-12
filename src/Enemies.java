@@ -1,17 +1,17 @@
 import java.util.Random;
 
 public class Enemies {
-    private Character[] enemies;
+    private Monster[] enemies;
 
-    public Enemies(Character[] enemies) {
+    public Enemies(Monster[] enemies) {
         this.enemies = enemies;
     }
 
-    public Character[] getEnemies() {
+    public Monster[] getEnemies() {
         return enemies;
     }
 
-    public Character getRandomEnemy() {
+    public Monster getRandomEnemy() {
         int randomIndex = new Random().nextInt(enemies.length);
         return enemies[randomIndex];
     }

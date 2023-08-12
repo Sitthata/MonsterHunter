@@ -21,6 +21,15 @@ public class Character {
     public void decreaseHealth(int damage) {
         this.health -= damage;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
     public void attack(Character target) {
         // random damage for some RNG
         int randomDamage = new Random().nextInt(20) + 1;
@@ -29,12 +38,6 @@ public class Character {
         System.out.println(name + " attacks " + target.getName() + " for " + randomDamage + " damage!");
     }
 
-    public void heal() {
-        int healAmount = new Random().nextInt(10) + 1;
-        this.health += healAmount;
-        //Feedback
-        System.out.println(name + " heals for " + healAmount + " health!");
-    }
 
     public boolean isAlive() {
         return this.health > 0;
